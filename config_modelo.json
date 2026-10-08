@@ -1,0 +1,42 @@
+{
+  "_comentario": "Modelo de validacao da figura: primeira chegada em t=2,0 na FILA1.",
+
+  "semente": 1,
+  "quantidadeAleatorios": 100000,
+  "gerador": { "a": 1664525, "c": 1013904223, "M": 4294967296 },
+  "sortearRotaDeterministica": false,
+
+  "filas": {
+    "FILA1": {
+      "servidores": 1,
+      "chegadaMin": 2.0,
+      "chegadaMax": 4.0,
+      "atendimentoMin": 1.0,
+      "atendimentoMax": 2.0
+    },
+    "FILA2": {
+      "servidores": 2,
+      "capacidade": 5,
+      "atendimentoMin": 4.0,
+      "atendimentoMax": 6.0
+    },
+    "FILA3": {
+      "servidores": 2,
+      "capacidade": 10,
+      "atendimentoMin": 5.0,
+      "atendimentoMax": 15.0
+    }
+  },
+
+  "rede": [
+    { "origem": "FILA1", "destino": "FILA2", "probabilidade": 0.2 },
+    { "origem": "FILA1", "destino": "FILA3", "probabilidade": 0.8 },
+    { "origem": "FILA2", "destino": "FILA1", "probabilidade": 0.3 },
+    { "origem": "FILA2", "destino": "FILA2", "probabilidade": 0.5 },
+    { "origem": "FILA3", "destino": "FILA1", "probabilidade": 0.7 }
+  ],
+
+  "chegadasIniciais": {
+    "FILA1": 2.0
+  }
+}
